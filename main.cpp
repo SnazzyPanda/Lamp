@@ -197,7 +197,10 @@ int main(int, char**)
     SDL_DestroyWindow(window);
     SDL_Quit();
 
-    Lamp::Core::FS::lampIO::saveKeyData("PreviousGame",std::to_string(Lamp::Games::getInstance().currentGameInt), "LAMP CONFIG");
+    std::string previousGame = (std::string)Lamp::Core::FS::lampIO::loadKeyData("PreviousGame","LAMP CONFIG").returnReason;
+    if(previousGame != std::to_string(Lamp::Games::getInstance().currentGameInt)){
+        Lamp::Core::FS::lampIO::saveKeyData("PreviousGame",std::to_string(Lamp::Games::getInstance().currentGameInt), "LAMP CONFIG");
+    }
 
     return 0;
 }
