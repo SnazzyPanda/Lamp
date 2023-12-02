@@ -203,7 +203,6 @@ void Lamp::Core::lampMenu::DefaultMenuBar() {
                     if(ImGui::MenuItem(element->Ident().ReadableName)){
                         Lamp::Games::getInstance().currentGame = element;
                         Lamp::Games::getInstance().currentGameInt = gameCount;
-                        Lamp::Core::FS::lampIO::saveKeyData("PreviousGame",std::to_string(gameCount), "LAMP CONFIG");
                     }
                     gameCount++;
                 }

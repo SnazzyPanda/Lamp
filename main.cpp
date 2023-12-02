@@ -191,5 +191,7 @@ int main(int, char**)
     SDL_DestroyWindow(window);
     SDL_Quit();
 
+    Lamp::Core::FS::lampIO::saveKeyData("PreviousGame",std::to_string(Lamp::Games::getInstance().currentGameInt), "LAMP CONFIG");
+
     return 0;
 }
