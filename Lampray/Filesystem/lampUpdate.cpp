@@ -9,6 +9,8 @@
 #include "../../third-party/imgui/imgui.h"
 
 void Lamp::Core::FS::lampUpdate::checkForUpdates() {
+	return;
+	/*
     CURL* curl = curl_easy_init();
     if (curl) {
         std::string url = "https://raw.githubusercontent.com/CHollingworth/Lampray/master/VERSION";
@@ -35,6 +37,7 @@ void Lamp::Core::FS::lampUpdate::checkForUpdates() {
         }
         curl_easy_cleanup(curl);
     }
+	*/
 }
 
 void Lamp::Core::FS::lampUpdate::getExpression() {
